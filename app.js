@@ -40,7 +40,16 @@ app.get("/compose", function (req, res) {
 
 app.post("/compose", function (req, res) {
   const title = req.body.postTitle;
-  console.log(title);
+  const body = req.body.postBody;
+
+  const data = {
+    posts: [
+      {
+        title: title,
+        body: body,
+      },
+    ],
+  };
 });
 
 app.listen(3000, function () {
