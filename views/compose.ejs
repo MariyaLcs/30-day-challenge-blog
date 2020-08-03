@@ -1,16 +1,14 @@
 <%- include("./partials/header") -%>
 
 <div class="modal-body">
-    <form method="POST">
+    <form method="POST" action="/compose">
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="title" class="form-control"/>
-        </div>
-        
-        
+            <label for="postTitle">Title</label>
+            <input type="text" name="postTitle" class="form-control"/>
+        </div>               
         <div class="form-group">
-        <label for="body">Body</label>
-        <textarea name="post" class="form-control"></textarea>
+        <label for="postBody">Body</label>
+        <textarea name="postBody" class="form-control"></textarea>
         </div>
         
         <button class="btn btn-info btn-block" type="submit">Publish</button>
