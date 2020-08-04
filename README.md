@@ -7,3 +7,8 @@
 
 - for css
   app.use(express.static("public"));
+
+- lodash (npm i lodash)
+  String - conversion functions for performing basic string operations, such as trimming, converting to uppercase, camel case, etc.
+  Ex. const requestedTitle = \_.lowerCase(req.params.postName);
+  var \_ = require('lodash');

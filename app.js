@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+var _ = require("lodash");
 
 const homeStartingContent =
   "Count backwards from 10, breathing low and slow. Try it before a meeting, in the car, or before you greet your kids or partner after a long day.";
@@ -54,7 +55,13 @@ app.post("/compose", function (req, res) {
 });
 
 app.get("/posts/:postName", function (req, res) {
-  console.log(req.params.postName);
+  const requestedTitle = _.lowerCase(req.params.postName);
+  posts.forEach((post) => {
+    const storedTitle = _.lowerCase(post.title);
+    if (storedTitle === requestedTitle) {
+      res.render("post", { title: post.title, body: post.body });
+    }
+  });
 });
 
 app.listen(3000, function () {
