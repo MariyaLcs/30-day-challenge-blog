@@ -6,7 +6,7 @@ const ejs = require("ejs");
 var _ = require("lodash");
 
 const homeStartingContent =
-  "Count backwards from 10, breathing low and slow. Try it before a meeting, in the car, or before you greet your kids or partner after a long day.";
+  "Daily reminders, whether you write 'em in your calendar, add them as events to your phone, or put Post-It's on your bedroom mirror, will help you stay on track, but bookmark this page and check back if you're ever unsure of the day's goal.";
 const aboutContent =
   "The upcoming month is all about focusing on self-care and finding ways to make physical and mental health a bigger part of your life, which may sound like a lot but in practice is pretty simple. We've designated one easy task per day, so you'll never feel too overwhelmed.";
 const moreContent =
@@ -19,7 +19,23 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const posts = [];
+const posts = [
+  {
+    title: "Day 1. Do a deep breathing exercise.",
+    body:
+      "Count backwards from 10, breathing low and slow. Try it before a meeting, in the car, or before you greet your kids or partner after a long day.",
+  },
+  {
+    title: "Day 2. Catch up with a good friend.",
+    body:
+      "Having a strong social support system is linked with a reduced risk of depression and high blood pressure, according to Mayo Clinic. And you'll probably get a good rec on what to watch next on Netflix too.",
+  },
+  {
+    title: "Day 3. Schedule something to look forward to.",
+    body:
+      "Plan a fun day later this month, whether you sign up for a cooking class, plan a mother-daughter movie marathon, or use the weekend to go on a mini road trip.",
+  },
+];
 
 app.get("/", function (req, res) {
   res.render("home", { startingPost: homeStartingContent, posts: posts });

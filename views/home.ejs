@@ -1,12 +1,14 @@
 <%- include("./partials/header") -%>
 
-<h2>Day 1. Do a deep breathing exercise.</h2>
+<h2>Day by Day</h2>
 <p><%= startingPost %></p>
 
 <% posts.forEach(post=>{ %>
     <h2> <%= post.title %></h1>
-    <p> <%= post.body %></p>
-<% }); %>
+    <p> <%= post.body.substring(0,50) + " ..."%></p>
+    <a href="/posts/<%=post.title%>">Read More</a>
+<% }) %>
 
+    
 
 <%- include("./partials/footer") -%>

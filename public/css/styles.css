@@ -28,16 +28,9 @@
   background-color: #cae9e6;
 }
 
-.footer p {
+.footer h5 {
   margin-top: 25px;
   font-weight: 600;
   font-size: 14px;
   color: black;
-}
-
-body p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 50ch;
 }
